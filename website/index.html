@@ -8,38 +8,41 @@ BJP :<span id="BJP"></span><br>
 CPM : <span id="CPM"></span><br>
 Congres: <span id="Congress"></span>
 <script>
-var bjp =1;
-var cpm = 1;
-var congress =1;
+    var bjp = 1;
+    var cpm = 1;
+    var congress = 1;
 
-function ShowResult() {
-    document.getElementById("total").innerText = "";
-    document.getElementById("BJP").innerText = bjp;
-    document.getElementById("CPM").innerText = cpm;
-    document.getElementById("Congress").innerText = congress;
-}
-
-function TotalVotes(party1, party2 , party3) {
-    var output = party1 + party2 + party3;
-    alert(typeof output)
-    alert(output)
-}
-
-function AddVote(e) {
-    let vote  =  document.getElementById("vote").value;
-    if(vote  == "b"){
-        bjp = bjp + 1;
-    }
-    if (vote == "g") {
-        congress += 2;
+    function ShowResult() {
+        document.getElementById("total").innerText = TotalVotes(bjp, cpm, congress)
+        document.getElementById("BJP").innerText = bjp;
+        document.getElementById("CPM").innerText = cpm;
+        document.getElementById("Congress").innerText = congress;
     }
 
-    if(vote == "c"){
-        cpm++;
+    function TotalVotes(party1, party2, party3) {
+        var output = party1 + party2 + party3;
+        //     alert(typeof output)
+        //     alert(output)
+        return output;
     }
-    document.getElementById("vote").value = "";
-    console.log(bjp , cpm , congress)
-}
+
+    function AddVote(e) {
+        debugger;
+        let vote = document.getElementById("vote").value;
+        if (vote == "b") {
+            bjp = bjp + 1;
+        }
+        if (vote == "g") {
+            congress += 1;
+        }
+
+        if (vote == "c") {
+            cpm++;
+        }
+        document.getElementById("vote").value = "";
+        console.log(bjp, cpm, congress)
+    };
+    
 
 
 
