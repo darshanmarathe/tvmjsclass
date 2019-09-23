@@ -1,0 +1,53 @@
+<input id="vote" type="text" placeholder="b for bjp c for cpm and g from conGress">
+<input type="button" value="Add vote" onclick="AddVote();">
+<input type="button" value="Show Result" onclick="ShowResult();">
+
+<br>
+total : <span id="total"></span><br>
+BJP :<span id="BJP"></span><br>
+CPM : <span id="CPM"></span><br>
+Congres: <span id="Congress"></span>
+<script>
+var bjp =1;
+var cpm = 1;
+var congress =1;
+
+function ShowResult() {
+    document.getElementById("total").innerText = "";
+    document.getElementById("BJP").innerText = bjp;
+    document.getElementById("CPM").innerText = cpm;
+    document.getElementById("Congress").innerText = congress;
+}
+
+function TotalVotes(party1, party2 , party3) {
+    var output = party1 + party2 + party3;
+    alert(typeof output)
+    alert(output)
+}
+
+function AddVote(e) {
+    let vote  =  document.getElementById("vote").value;
+    if(vote  == "b"){
+        bjp = bjp + 1;
+    }
+    if (vote == "g") {
+        congress += 2;
+    }
+
+    if(vote == "c"){
+        cpm++;
+    }
+    document.getElementById("vote").value = "";
+    console.log(bjp , cpm , congress)
+}
+
+
+
+
+
+
+//TotalVotes(bjp , cpm , congress);
+
+
+
+</script>
